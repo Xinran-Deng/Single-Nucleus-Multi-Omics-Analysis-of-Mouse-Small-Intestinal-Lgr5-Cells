@@ -40,8 +40,8 @@ ggboxplot(cytotrace2_result@meta.data, x="ISCcombined", y="CytoTRACE2_Score", wi
                 stat_compare_means()
 dev.off()
 
-rna_obj_filter_sub <- subset(rna_obj_filter,idents=c("Goblet","Enteroendocrine","Tuft"),invert=TRUE)
-cytotrace2_result115 <- cytotrace2(rna_obj_filter_sub,
+
+cytotrace2_result115 <- cytotrace2(rna_obj_filter,
                   species = "mouse",
                   is_seurat = TRUE,
                   slot_type = "counts",
@@ -86,4 +86,5 @@ Cytotrace2_p+
                    y=mean,
                    yend=mean),
                color="red")
+
 dev.off()
